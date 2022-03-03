@@ -23,9 +23,9 @@ UI.prototype.addBookToList =function (book){
     `;
 
     list.appendChild(row);
-    
-    document.querySelector(".delete").addEventListener("click", (e)=> {
-        row.remove();
+    const delBook = document.querySelector(".delete");
+    delBook.addEventListener("click", (e)=> {
+        delBook.closest("tr").remove();
     })
 };
 
