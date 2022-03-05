@@ -8,6 +8,7 @@
 
 // UI.prototype.addBookToList =function (book){
     
+<<<<<<< HEAD
 //     const list = document.getElementById("book-list"); 
 //     const row = document.createElement("tr"); 
   
@@ -91,6 +92,10 @@ class Book{
     this.isbn = isbn
 };
 };
+=======
+    const list = document.getElementById("book-list"); 
+    const row = document.createElement("tr");  
+>>>>>>> 3aeb7e8a54b87027a8017218b63aa488ec279dea
 
 class UI {
 
@@ -105,6 +110,7 @@ class UI {
     <td> <a href="#" class="delete">x<a/></td>   
     `;
 
+<<<<<<< HEAD
     list.appendChild(row);  
     };
 
@@ -121,6 +127,38 @@ class UI {
             }, 3000
             );    
     }
+=======
+    list.appendChild(row);
+    const delBook = document.querySelector(".delete");
+    delBook.addEventListener("click", (e)=> {
+        delBook.closest("tr").remove();
+    })
+};
+
+//show alert
+UI.prototype.showAlert = function(msg, className){
+    const div = document.createElement("div"); 
+    div.className = `alert ${className}`
+    div.appendChild(document.createTextNode(msg));
+
+    const container = document.querySelector(".container");
+    const form = document.querySelector("#book-form");
+    container.insertBefore(div,form); 
+    setTimeout(function(){
+        document.querySelector('.alert').remove()
+    }, 2000
+    )
+}
+
+UI.prototype.deleteBook = function(target){
+    if (target.className === "delete"){
+        target.parentElement.parentElement.remove();
+    }
+}
+
+
+
+>>>>>>> 3aeb7e8a54b87027a8017218b63aa488ec279dea
 
     deleteBook(target){
         if (target.className === "delete"){
@@ -152,7 +190,10 @@ document.getElementById("book-form").addEventListener("submit", (e)=> {
         ui.clearFields();
     }
 
+<<<<<<< HEAD
    
+=======
+>>>>>>> 3aeb7e8a54b87027a8017218b63aa488ec279dea
     e.preventDefault();
 });
 
@@ -162,3 +203,7 @@ document.getElementById("book-list").addEventListener("click", (e)=> {
     ui.showAlert("Book is deleted!!!", "success");
     e.preventDefault();
 })
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3aeb7e8a54b87027a8017218b63aa488ec279dea
